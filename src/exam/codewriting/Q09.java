@@ -1,9 +1,4 @@
 package exam.codewriting;
-
-import java.util.Scanner;
-
-import edu.princeton.cs.introcs.StdDraw;
-
 public class Q09 {
 
 	/*

@@ -1,9 +1,4 @@
 package exam.codewriting;
-
-import java.util.Scanner;
-
-import edu.princeton.cs.introcs.StdDraw;
-
 public class Q06 {
 
 	/*
@@ -25,15 +20,24 @@ public class Q06 {
 	//You should use a helper method as part of your recursive implementation.
 	
 	public static double sqrtR( double x) {
-		return 0; //fix me
+		double xOld = x;
+		double xNew = x/2;
+		return sqrtRHelper(x, xOld, xNew); 
 	}
+
+	private static double sqrtRHelper(double x, double xOld, double xNew) {
+		if (Math.abs(xOld - xNew) <= 0.001) return xNew;
+		else {
+			double next = (xNew + (x / xNew)) / 2;
+        	return sqrtRHelper(x, xNew, next); 
+		}
+	}
+
 
 
 	public static void main ( String[] args ) {
 		System.out.println(sqrt(5)); //given method
-		
-		System.out.println(sqrt(5)); //your recursive method
-		
+		System.out.println(sqrtR(5)); //your recursive method	
 	}
 
 }

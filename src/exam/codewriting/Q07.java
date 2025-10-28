@@ -1,9 +1,4 @@
 package exam.codewriting;
-
-import java.util.Scanner;
-
-import edu.princeton.cs.introcs.StdDraw;
-
 public class Q07 {
 
 	/*
@@ -15,7 +10,11 @@ public class Q07 {
 	*/
 	
 	public static int rollingSum (int n ) {
-		return 0; //fix me
+		int sum = 0;
+		for (int i = 0; i <= n; i++) {
+			sum = sum + i;
+		}
+		return sum;
 	}
 	
 	public static void main ( String[] args ) {

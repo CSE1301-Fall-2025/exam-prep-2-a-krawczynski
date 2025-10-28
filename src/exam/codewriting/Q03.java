@@ -5,6 +5,11 @@ import edu.princeton.cs.introcs.StdDraw;
 public class Q03 {
 
 	public static void boxy ( double xCtr , double yCtr , double halfLength ) {
+		if (halfLength < 0.005) return;
+		StdDraw.square(xCtr, yCtr, halfLength);
+		double offset = halfLength;
+		boxy(xCtr-offset, yCtr-offset, halfLength/2);
+		boxy(xCtr+offset, yCtr-offset, halfLength/2);
 		//your code here
 	}
 
@@ -14,7 +19,7 @@ public class Q03 {
 
 		//Your solution must use recursion
 
-		boxy (0.5 , 0.5 , 0.25);
+		boxy (0.5 , 0.6 , 0.25);
 	}
 
 }

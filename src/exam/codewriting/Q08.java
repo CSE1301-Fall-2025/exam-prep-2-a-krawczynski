@@ -1,9 +1,4 @@
 package exam.codewriting;
-
-import java.util.Scanner;
-
-import edu.princeton.cs.introcs.StdDraw;
-
 public class Q08 {
 
 	/*
@@ -24,7 +19,15 @@ public class Q08 {
 	 */
 
 	public static int[] countValues (int[][] a, int findMe ) {
-		return new int[0]; //fix me
+		int[] counts = new int[a[0].length];
+		for (int i = 0; i < a.length; i++) {
+			for (int j = 0; j < a[0].length; j++) {
+				if (a[i][j] == findMe) {
+				counts[j]++;
+			}
+			}
+		}
+		return counts; //fix me
 	}
 
 	public static void main ( String[] args ) {

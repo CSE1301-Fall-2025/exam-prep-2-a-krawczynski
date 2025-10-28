@@ -1,4 +1,4 @@
-package exam.codereading;
+ package exam.codereading;
 
 public class Q06 {
 

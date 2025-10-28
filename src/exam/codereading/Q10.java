@@ -21,7 +21,7 @@ public class Q10 {
 			boo (z / 2);
 		}
 	}
-
+  
 	public static void main(String[] args) {
 		//What gets printed?
 
@@ -32,3 +32,5 @@ public class Q10 {
 		bipitty(12);
 	}
 }
+
+// done up to here

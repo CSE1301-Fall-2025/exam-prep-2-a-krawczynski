@@ -13,11 +13,25 @@ public class Q02 {
 	*
 	**/
 	public static void dashedLine(double x) {
-		
+		dashedLineHelper(x, 0);;
 	}
 
-	public static void main(String[] args) {
-		dashedLine(0.25);
-	}
+	private static void dashedLineHelper(double x, double y) {
+        double dashLength = 0.02;
+        double gapLength = 0.02;
 
-}
+		if (y >= 1.0) {
+            return;
+        }
+
+		// draw one dash
+        	StdDraw.line(x, y, x, y + dashLength);
+
+        // recursive call: move up past the dash and the gap
+        	dashedLineHelper(x, y + dashLength + gapLength);
+    	}
+
+    	public static void main(String[] args) {
+        	dashedLine(0.5);
+    	}
+	}

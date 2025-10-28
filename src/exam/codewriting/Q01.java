@@ -5,7 +5,13 @@ import edu.princeton.cs.introcs.StdDraw;
 public class Q01 {
 
 	public static void recursiveCarpet ( double xCtr , double yCtr , double halfLength ) {
-		//your code here
+		if (halfLength < 0.002) return;
+		StdDraw.filledSquare(xCtr, yCtr, halfLength/1.5);
+		double offset = halfLength*1.2;
+		recursiveCarpet(xCtr+offset, yCtr+offset, halfLength/3);
+		recursiveCarpet(xCtr-offset, yCtr-offset, halfLength/3);
+		recursiveCarpet(xCtr-offset, yCtr+offset, halfLength/3);
+		recursiveCarpet(xCtr+offset, yCtr-offset, halfLength/3);
 	}
 
 	public static void main(String[] args) {

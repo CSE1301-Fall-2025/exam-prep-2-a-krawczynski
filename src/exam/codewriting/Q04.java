@@ -13,8 +13,12 @@ public class Q04 {
 	array.
 	 */
 	public static double[] fillDoubleArray (int n, Scanner in) {
-		return null; //fix me
-	}
+		double[] arr = new double[n];
+		for (int i = 0; i < n - 1; i++) {
+			arr[i] = in.nextDouble();
+		}
+		return arr;
+		}
 
 	/*
 	We wish to make a program that draws user-defined polygons. You should first request the user to specify
@@ -24,7 +28,16 @@ public class Q04 {
 	 */
 	public static void main ( String[] args ) {
 		Scanner in = new Scanner ( System .in );
-		//use StdDraw.polygon and fillDoubleArray
+		System.out.println("How many sides should the polygon have?");
+		int sides = in.nextInt();
+
+		System.out.println("Enter the x coordinates:");
+		double[] x = fillDoubleArray(sides, in);
+
+		System.out.println("Enter the y coordinates:");
+		double[] y = fillDoubleArray(sides, in);
+
+		StdDraw.polygon(x, y);
 	}
 
 }
