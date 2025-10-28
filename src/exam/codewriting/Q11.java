@@ -1,9 +1,4 @@
 package exam.codewriting;
-
-import java.util.Scanner;
-
-import edu.princeton.cs.introcs.StdDraw;
-
 public class Q11 {
 
 	/*
@@ -21,7 +16,13 @@ public class Q11 {
 
 	 */
 	public static int sumEvens(int[] a) {
-		return 0; //fix me
+		int sum = 0;
+		for (int i = 0; i < a.length; i++) {
+			if (a[i] % 2 == 0) {
+				sum = a[i] + sum;
+			}
+		}
+		return sum; //fix me
 	}
 
 	public static void main ( String[] args ) {

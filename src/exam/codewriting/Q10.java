@@ -1,9 +1,4 @@
 package exam.codewriting;
-
-import java.util.Scanner;
-
-import edu.princeton.cs.introcs.StdDraw;
-
 public class Q10 {
 
 	/*
@@ -16,7 +11,13 @@ public class Q10 {
 	Complete the method. You may use either iteration or recursion.
 	 */
 	public static int repeat (String text, int n) {
-		return 0; //fix me
+		System.out.print(text);
+		if (n>0) {
+			return repeat(text,n-1);
+		}
+		else {
+			return 0;
+		}
 	}
 
 	public static void main ( String[] args ) {

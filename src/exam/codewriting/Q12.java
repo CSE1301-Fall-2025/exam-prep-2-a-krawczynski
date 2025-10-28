@@ -4,7 +4,13 @@ import edu.princeton.cs.introcs.StdDraw;
 
 public class Q12 {
 
-	public static void rDraw ( double xCtr , double yCtr , double size ) {
+	public static double rDraw ( double xCtr , double yCtr , double size ) {
+		StdDraw.square(xCtr,yCtr,size);
+		StdDraw.square(xCtr/2, yCtr*1.5, size/2);
+		StdDraw.square(xCtr*1.5, yCtr/2, size/2);
+		StdDraw.circle(xCtr/2, yCtr*1.5, size/2);
+		StdDraw.circle(xCtr*1.5, yCtr/2, size/2);
+
 		//your code here
 	}
 
