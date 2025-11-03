@@ -19,13 +19,13 @@ public class Q05 {
 				count ++;
 			}
 		}
-		return count; //fix me
+		return count;
 	}
 
 
 	public static void main ( String[] args ) {
 		int[] a = {1, 3, 1};
-		System.out.println(countValue(a, 5));
+		System.out.println(countValue(a, 1));
 	}
 
 }

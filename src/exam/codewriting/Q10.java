@@ -12,11 +12,12 @@ public class Q10 {
 	 */
 	public static int repeat (String text, int n) {
 		System.out.print(text);
-		if (n>0) {
+		if (n > 0) {
 			return repeat(text,n-1);
 		}
 		else {
 			return 0;
+			
 		}
 	}
 

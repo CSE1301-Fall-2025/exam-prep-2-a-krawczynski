@@ -12,10 +12,10 @@ public class Q09 {
 	this problem if a loop is used at any point.
 	 */
 	public static int numDigits (int x) {
-		if (x<0) {
+		if (x < 0) {
 			x = -x;
 		}
-		if (x<10) {
+		if (x < 10) {
 			return 1;
 		}
 		return 1 + numDigits(x/10); //fix me

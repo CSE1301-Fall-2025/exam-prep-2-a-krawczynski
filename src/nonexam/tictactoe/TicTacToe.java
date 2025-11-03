@@ -18,7 +18,14 @@ public class TicTacToe  {
 	 * @return a 3x3 String[][] array with each element set to a single blank string (" ").
 	 */
 	public static String[][] genBoard() {
-		return null; // FIXME
+		String[][] board = new String[3][3];
+		for (int i = 0; i < board.length; i++) {
+			for (int j = 0; j < board[0].length; j++) {
+				board[i][j] = "";
+			}
+
+		}
+		return board;
 	}
 
 	/**
@@ -40,7 +47,12 @@ public class TicTacToe  {
 	 * @param row should be between 0 and 2, inclusively
 	 */
 	public static void verifyValidRow(int row) {
-		throw new UnsupportedOperationException("You must implement this method");
+		if (row <= 2 && row >= 0) {
+			return;
+		}
+		else {
+			throw new UnsupportedOperationException("Row should be between 0 and 2, inclusively.");
+		}
 	}
 
 	/**
@@ -48,7 +60,12 @@ public class TicTacToe  {
 	 * @param col should be between 0 and 2, inclusively
 	 */
 	public static void verifyValidCol(int col) {
-		throw new UnsupportedOperationException("You must implement this method");
+		if (col <= 2 && col >= 0) {
+			return;
+		}
+		else {
+			throw new UnsupportedOperationException("Column should be between 0 and 2, inclusively.");
+		}
 	}
 
 
@@ -91,8 +108,13 @@ public class TicTacToe  {
 		verifyValidRow(row);
 		verifyValidCol(col);
 		
-		
-		return false; // FIXME
+		// check if spot is empty
+    	if (board[row][col].equals(" ")) {
+        	board[row][col] = player;
+        	return true;
+    	} else {
+        	return false;
+    	}
 	}
 
 	/**
@@ -101,7 +123,14 @@ public class TicTacToe  {
 	 * @return true iff the board is full
 	 */
 	public static boolean boardFull(String[][] board) {
-		return true; // FIXME
+		for (int i = 0; i < board.length; i++) {
+			for (int j = 0; j < board[0].length; j++) {
+				if (board[i][j].equals("")) {
+					return false;
+				}
+			}
+		}
+			return true;
 	}
 
 	/**
@@ -113,8 +142,31 @@ public class TicTacToe  {
 	 */
 	public static boolean winFor(String player, String[][] board) {
 		verifyValidPlayer(player);
-		
-		return true; // FIXME
+		// check rows
+    	for (int r = 0; r < 3; r++) {
+        	if (board[r][0].equals(player) && board[r][1].equals(player) && board[r][2].equals(player)) {
+            	return true;
+        	}
+    	}
+
+    	// check columns
+    	for (int c = 0; c < 3; c++) {
+        	if (board[0][c].equals(player) && board[1][c].equals(player) && board[2][c].equals(player)) {
+            	return true;
+        	}
+    	}
+
+    	// check diagonals
+    	if (board[0][0].equals(player) && board[1][1].equals(player) && board[2][2].equals(player)) {
+        	return true;
+    	}
+
+    	if (board[0][2].equals(player) && board[1][1].equals(player) && board[2][0].equals(player)) {
+        return true;
+    	}
+
+    	// if none match, no win
+    	return false;
 	}
 
 }

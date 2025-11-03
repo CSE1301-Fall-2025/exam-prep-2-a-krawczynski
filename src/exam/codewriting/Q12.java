@@ -6,23 +6,25 @@ public class Q12 {
 
 	public static void rDraw(double xCtr, double yCtr, double size) {
     // base case
-    if (size < 0.01) return;
-
-    // draw the square centered at (xCtr, yCtr)
-    StdDraw.square(xCtr, yCtr, size);
+    if (size < 0.001) return;
 
     // draw circles only when squares are small enough (adjust threshold if needed)
-    if (size < 0.08) {
+    if (size < 0.075) {
         // circle centers placed near the corner along the diagonal
         // these offsets (1.5*size) are a reasonable visual choice; tweak if you'd like
-        StdDraw.circle(xCtr + 1.5 * size, yCtr - 1.5 * size, size / 3.0);
-        StdDraw.circle(xCtr - 1.5 * size, yCtr + 1.5 * size, size / 3.0);
+        StdDraw.circle(xCtr + size, yCtr - size, size / 2.0);
+        StdDraw.circle(xCtr - size, yCtr + size, size / 2.0);
     }
 
+    // draw the square centered at (xCtr, yCtr)
+    if (size > 0.05) {
+        StdDraw.square(xCtr, yCtr, size);
+
+    }
     // recursively draw the next squares along the diagonal in both directions
     // move by one full side length = 2*size to land at the next center
-    rDraw(xCtr + 2 * size, yCtr - 2 * size, size / 1.75); // down-right
-    rDraw(xCtr - 2 * size, yCtr + 2 * size, size / 1.75); // up-left
+    rDraw(xCtr + size, yCtr - size, size / 2); // down-right
+    rDraw(xCtr - size, yCtr + size, size / 2); // up-left
 }
 
 

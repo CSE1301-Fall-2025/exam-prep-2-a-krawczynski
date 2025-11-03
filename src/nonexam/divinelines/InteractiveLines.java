@@ -9,6 +9,7 @@ public class InteractiveLines {
 		StdDraw.text(0.5, 0.9, "Press and drag the mouse.");
 		StdDraw.text(0.5, 0.85, "A line will be drawn when you release.");
 		while (true) {
+			StdDraw.pause(10);
 			//
 			// Wait for the mousebutton to be pressed
 			//
